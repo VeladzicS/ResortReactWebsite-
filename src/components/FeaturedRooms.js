@@ -1,11 +1,12 @@
-import React from "react";
-import { RoomContext } from "../context";
+import React, { useContext } from "react";
 import Loading from "./Loading";
 import Room from "../components/Room";
 import Title from "./Title";
+import RoomContext from "../context/RoomContext/RoomContext";
 
 const FeaturedRooms = () => {
-  let { featuredRooms: rooms, isLoading } = React.useContext(RoomContext);
+  const roomContext = useContext(RoomContext);
+  let { featuredRooms: rooms, isLoading } = roomContext;
   rooms = rooms.map((room) => {
     return <Room key={room.id} room={room} />;
   });

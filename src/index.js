@@ -5,15 +5,15 @@ import { FaRProject } from "react-icons/fa";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { RoomProvider } from "./context";
+import RoomState from "./context/RoomContext/RoomState";
 
 ReactDOM.render(
   <React.StrictMode>
-    <RoomProvider>
+    <RoomState>
       <Router>
         <App />
       </Router>
-    </RoomProvider>
+    </RoomState>
   </React.StrictMode>,
   document.getElementById("root")
 );
